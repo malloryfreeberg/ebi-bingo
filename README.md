@@ -38,15 +38,7 @@ No build step needed — it's plain HTML/CSS/JS.
    ```
    then visit `http://localhost:8000`
 
-## Deploying with GitHub Pages
-
-1. Push this repo to `https://github.com/malloryfreeberg/ebi-bingo`
-2. In the repo, go to **Settings → Pages**
-3. Under "Build and deployment", set **Source** to "Deploy from a branch"
-4. Choose the `main` branch and `/ (root)` folder, then **Save**
-5. Your app will be live at `https://malloryfreeberg.github.io/<repo-name>/` within a few minutes
-
-## Tech
+## Tech stack
 
 - Vanilla HTML/CSS/JavaScript
 - [jsPDF](https://github.com/parallax/jsPDF) (loaded via CDN) for client-side PDF generation
