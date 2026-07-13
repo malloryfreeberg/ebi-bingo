@@ -4,8 +4,7 @@
  * (filtered to Type = "Data resources"), captured 2026-07-13.
  * 55 entries total.
  *
- * If EMBL-EBI adds/removes/renames resources, update this list to match
- * the live page's "Data resources" filter.
+ * If any resources are added, removed, or renamed, update `resources.js` to match.
  */
 const EBI_DATA_RESOURCES = [
   { name: "International Genome Sample Resource", url: "http://www.1000genomes.org/" },
