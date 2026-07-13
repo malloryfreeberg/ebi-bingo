@@ -1,8 +1,8 @@
-# EMBL-EBI Bioinformatics Bingo
+# EMBL-EBI Conference Bingo
 
 A free, single-page web app that generates a printable 5x5 bingo card (as a PDF)
-filled with EMBL-EBI data resources. Click "Generate a new bingo card" and a
-freshly randomized, A4-ready PDF downloads automatically.
+randomly filled with EMBL-EBI data resources. Click "Generate a new bingo card" and a
+freshly randomised PDF downloads automatically.
 
 **Live demo:** `https://malloryfreeberg.github.io/ebi-bingo/` (once GitHub Pages is enabled — see below)
 
@@ -12,16 +12,15 @@ freshly randomized, A4-ready PDF downloads automatically.
 - Squares are randomly drawn (no repeats) each time you click generate
 - Choose what goes in the center square:
   - **Free** — a classic bingo free space
-  - **EMBL-EBI** — the center always reads "EMBL-EBI"
+  - **EMBL-EBI** — a mention of EMBL-EBI as an institution
   - **Random EMBL-EBI resource** — center is just another random draw
-- Output is a print-ready PDF sized for standard A4 paper
+- Output is a print-ready PDF
 - 100% client-side — no server, no build step, no tracking
 
 ## Resource list
 
-Squares are drawn from EMBL-EBI's own
-["Data resources" list](https://www.ebi.ac.uk/services/data-resources-and-tools/)
-(filtered to Type = "Data resources", excluding "Tools"). The 55 resources are
+Squares are drawn from EMBL-EBI's 
+["Data resources" list](https://www.ebi.ac.uk/services/data-resources-and-tools/). The 55 resources are
 captured in [`resources.js`](resources.js). If EMBL-EBI adds, removes, or
 renames resources on that page, update `resources.js` to match.
 
@@ -38,7 +37,7 @@ No build step needed — it's plain HTML/CSS/JS.
 
 ## Deploying with GitHub Pages
 
-1. Push this repo to `https://github.com/malloryfreeberg/ebi-bingo` (or your chosen repo name)
+1. Push this repo to `https://github.com/malloryfreeberg/ebi-bingo`
 2. In the repo, go to **Settings → Pages**
 3. Under "Build and deployment", set **Source** to "Deploy from a branch"
 4. Choose the `main` branch and `/ (root)` folder, then **Save**
