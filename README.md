@@ -5,7 +5,7 @@ randomly filled with EMBL-EBI data resources. Click "Generate a new bingo card"
 to randomize the squares, preview them on screen, then click "Download bingo
 card" to save the current card as a PDF.
 
-**Live demo:** `https://malloryfreeberg.github.io/ebi-bingo/`
+**Live demo:** https://malloryfreeberg.github.io/ebi-bingo/
 
 ## Features
 
