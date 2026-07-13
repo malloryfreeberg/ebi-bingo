@@ -4,7 +4,7 @@ A free, single-page web app that generates a printable 5x5 bingo card (as a PDF)
 randomly filled with EMBL-EBI data resources. Click "Generate a new bingo card" and a
 freshly randomised PDF downloads automatically.
 
-**Live demo:** `https://malloryfreeberg.github.io/ebi-bingo/` (once GitHub Pages is enabled — see below)
+**Live demo:** `https://malloryfreeberg.github.io/ebi-bingo/`
 
 ## Features
 
