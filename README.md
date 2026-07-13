@@ -22,12 +22,12 @@ card" to save the current card as a PDF.
 
 Squares are drawn from EMBL-EBI's 
 ["Data resources" list](https://www.ebi.ac.uk/services/data-resources-and-tools/). The 55 resources are
-captured in [`resources.js`](resources.js). If EMBL-EBI adds, removes, or
-renames resources on that page, update `resources.js` to match.
+captured in [`resources.js`](resources.js). If any resources are added, removed, or
+renamed, update `resources.js` to match.
 
 ## Running locally
 
-No build step needed — it's plain HTML/CSS/JS.
+No build step needed - it's plain HTML/CSS/JS.
 
 1. Clone the repo
 2. Open `index.html` directly in a browser, or serve the folder locally, e.g.:
