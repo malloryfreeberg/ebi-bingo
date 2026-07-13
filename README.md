@@ -9,16 +9,14 @@ card" to save the current card as a PDF.
 
 ## Features
 
-- 5x5 bingo grid, one EMBL-EBI data resource per square
-- Squares are randomly drawn (no repeats) each time you click generate
-- Separate "Generate a new bingo card" and "Download bingo card" buttons, so
-  you can preview a card before saving it
+- 5x5 bingo grid, one EMBL-EBI resource per square
+- Squares are randomly drawn (no repeats) each time you click "Generate a new bingo card"
 - Choose what goes in the center square:
   - **Free** — a classic bingo free space
-  - **EMBL-EBI** — a mention of EMBL-EBI as an institution
-  - **Random EMBL-EBI resource** — center is just another random draw
+  - **EMBL-EBI** — any mention of EMBL-EBI in general
+  - **Random EMBL-EBI resource** — another random resource draw
+- Use the "Download bingo card" button when you want to download the card
 - Output is a print-ready PDF
-- 100% client-side — no server, no build step, no tracking
 
 ## Resource list
 
