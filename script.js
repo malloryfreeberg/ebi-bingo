@@ -6,9 +6,15 @@
   const TOTAL_SQUARES = GRID_SIZE * GRID_SIZE;
 
   const generateBtn = document.getElementById("generateBtn");
+  const downloadBtn = document.getElementById("downloadBtn");
   const centerModeSelect = document.getElementById("centerMode");
   const cardEl = document.getElementById("card");
   const statusEl = document.getElementById("status");
+
+  // Holds the most recently generated card so "Download" can export
+  // exactly what's currently shown in the preview.
+  let currentSquares = null;
+  let currentCenterMode = null;
 
   /** Fisher-Yates shuffle, returns a new shuffled copy. */
   function shuffle(arr) {
@@ -63,7 +69,7 @@
 
     const title = document.createElement("div");
     title.className = "card-title";
-    title.textContent = "EMBL-EBI Bioinformatics Bingo";
+    title.textContent = "EMBL-EBI Conference Bingo";
     cardEl.appendChild(title);
 
     const grid = document.createElement("div");
@@ -90,8 +96,8 @@
     // Title
     doc.setFont("helvetica", "bold");
     doc.setFontSize(18);
-    doc.setTextColor(0, 60, 113);
-    doc.text("EMBL-EBI Bioinformatics Bingo", pageWidth / 2, 22, { align: "center" });
+    doc.setTextColor(10, 80, 50); // EMBL darkest tint green (#0A5032)
+    doc.text("EMBL-EBI Conference Bingo", pageWidth / 2, 22, { align: "center" });
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
@@ -111,10 +117,10 @@
       const y = gridTop + row * squareSize;
 
       if (sq.isFree) {
-        doc.setFillColor(28, 91, 140);
+        doc.setFillColor(0, 123, 83); // EMBL dark tint green (#007B53)
         doc.rect(x, y, squareSize, squareSize, "F");
       } else {
-        doc.setDrawColor(28, 91, 140);
+        doc.setDrawColor(0, 123, 83); // EMBL dark tint green (#007B53)
         doc.setLineWidth(0.4);
         doc.rect(x, y, squareSize, squareSize, "S");
       }
@@ -167,17 +173,36 @@
     try {
       const centerMode = centerModeSelect.value;
       const squares = buildCardSquares(centerMode);
+      currentSquares = squares;
+      currentCenterMode = centerMode;
       renderPreview(squares);
-      generatePdf(squares, centerMode);
-      statusEl.textContent = "New bingo card generated and downloaded as a PDF.";
+      statusEl.textContent = "New bingo card generated. Click “Download bingo card” to save it as a PDF.";
     } catch (err) {
       statusEl.textContent = "Something went wrong generating the card. See console for details.";
       console.error(err);
     }
   }
 
-  generateBtn.addEventListener("click", handleGenerate);
+  function handleDownload() {
+    if (!currentSquares) {
+      statusEl.textContent = "Generate a card first, then download it.";
+      return;
+    }
+    try {
+      generatePdf(currentSquares, currentCenterMode);
+      statusEl.textContent = "Bingo card downloaded as a PDF.";
+    } catch (err) {
+      statusEl.textContent = "Something went wrong downloading the PDF. See console for details.";
+      console.error(err);
+    }
+  }
 
-  // Render one card on load so the page isn't empty.
-  renderPreview(buildCardSquares(centerModeSelect.value));
+  generateBtn.addEventListener("click", handleGenerate);
+  downloadBtn.addEventListener("click", handleDownload);
+
+  // Render one card on load so the page isn't empty, and make it
+  // immediately downloadable without requiring an extra click.
+  currentSquares = buildCardSquares(centerModeSelect.value);
+  currentCenterMode = centerModeSelect.value;
+  renderPreview(currentSquares);
 })();

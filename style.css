@@ -1,6 +1,8 @@
 :root {
-  --ebi-blue: #1c5b8c;
-  --ebi-dark: #003c71;
+  /* EMBL "Dark tint green" / "Darkest tint green" from the official EMBL
+     brand guidelines: https://www.embl.org/guidelines/design/design-guidelines/colours/ */
+  --ebi-green: #007b53;
+  --ebi-dark: #0a5032;
   --border: #c7d3dc;
   --bg: #f7f9fb;
 }
@@ -35,7 +37,7 @@ header h1 {
 }
 
 .subtitle a {
-  color: var(--ebi-blue);
+  color: var(--ebi-green);
 }
 
 .controls {
@@ -61,19 +63,52 @@ header h1 {
   font-size: 0.95rem;
 }
 
-#generateBtn {
+.btn-group {
+  display: flex;
+  gap: 10px;
   margin-left: auto;
+  flex-wrap: wrap;
+}
+
+#generateBtn,
+#downloadBtn {
   padding: 10px 18px;
-  background: var(--ebi-blue);
-  color: #fff;
-  border: none;
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  border: 1.5px solid var(--ebi-green);
+}
+
+#generateBtn {
+  background: var(--ebi-green);
+  color: #fff;
 }
 
 #generateBtn:hover {
   background: var(--ebi-dark);
+  border-color: var(--ebi-dark);
+}
+
+#downloadBtn {
+  background: #fff;
+  color: var(--ebi-green);
+}
+
+#downloadBtn:hover {
+  background: var(--ebi-green);
+  color: #fff;
+}
+
+#downloadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--border);
+  color: #888;
+}
+
+#downloadBtn:disabled:hover {
+  background: #fff;
+  color: #888;
 }
 
 .status {
@@ -117,7 +152,7 @@ header h1 {
 }
 
 .square {
-  border: 1.5px solid var(--ebi-blue);
+  border: 1.5px solid var(--ebi-green);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -131,7 +166,7 @@ header h1 {
 }
 
 .square.free {
-  background: var(--ebi-blue);
+  background: var(--ebi-green);
   color: #fff;
   font-weight: 700;
   font-size: 0.85rem;
@@ -145,12 +180,17 @@ footer {
 }
 
 footer a {
-  color: var(--ebi-blue);
+  color: var(--ebi-green);
 }
 
 @media (max-width: 480px) {
-  #generateBtn {
+  .btn-group {
     margin-left: 0;
     width: 100%;
+  }
+
+  #generateBtn,
+  #downloadBtn {
+    flex: 1;
   }
 }

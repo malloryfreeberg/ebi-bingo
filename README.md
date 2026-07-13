@@ -1,8 +1,9 @@
 # EMBL-EBI Conference Bingo
 
 A free, single-page web app that generates a printable 5x5 bingo card (as a PDF)
-randomly filled with EMBL-EBI data resources. Click "Generate a new bingo card" and a
-freshly randomised PDF downloads automatically.
+randomly filled with EMBL-EBI data resources. Click "Generate a new bingo card"
+to randomize the squares, preview them on screen, then click "Download bingo
+card" to save the current card as a PDF.
 
 **Live demo:** `https://malloryfreeberg.github.io/ebi-bingo/`
 
@@ -10,6 +11,8 @@ freshly randomised PDF downloads automatically.
 
 - 5x5 bingo grid, one EMBL-EBI data resource per square
 - Squares are randomly drawn (no repeats) each time you click generate
+- Separate "Generate a new bingo card" and "Download bingo card" buttons, so
+  you can preview a card before saving it
 - Choose what goes in the center square:
   - **Free** — a classic bingo free space
   - **EMBL-EBI** — a mention of EMBL-EBI as an institution
@@ -47,6 +50,9 @@ No build step needed — it's plain HTML/CSS/JS.
 
 - Vanilla HTML/CSS/JavaScript
 - [jsPDF](https://github.com/parallax/jsPDF) (loaded via CDN) for client-side PDF generation
+- Colors use EMBL's official "Dark tint green" (`#007B53`) and "Darkest tint
+  green" (`#0A5032`) from the
+  [EMBL brand guidelines](https://www.embl.org/guidelines/design/design-guidelines/colours/)
 
 ## License
 
