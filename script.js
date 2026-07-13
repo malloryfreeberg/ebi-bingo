@@ -69,7 +69,7 @@
 
     const title = document.createElement("div");
     title.className = "card-title";
-    title.textContent = "EMBL-EBI Conference Bingo";
+    title.textContent = "EMBL-EBI Resources Bingo";
     cardEl.appendChild(title);
 
     const grid = document.createElement("div");
@@ -97,7 +97,7 @@
     doc.setFont("helvetica", "bold");
     doc.setFontSize(18);
     doc.setTextColor(10, 80, 50); // EMBL darkest tint green (#0A5032)
-    doc.text("EMBL-EBI Conference Bingo", pageWidth / 2, 22, { align: "center" });
+    doc.text("EMBL-EBI Resources Bingo", pageWidth / 2, 22, { align: "center" });
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
