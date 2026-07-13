@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMBL-EBI Bioinformatics Bingo</title>
+<meta name="description" content="Generate a printable 5x5 bingo card of EMBL-EBI data resources as a PDF.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>EMBL-EBI Bioinformatics Bingo</h1>
+      <p class="subtitle">
+        Generate a printable 5&times;5 bingo card featuring EMBL-EBI data resources.
+        Squares are drawn at random from the
+        <a href="https://www.ebi.ac.uk/services/data-resources-and-tools/" target="_blank" rel="noopener">
+          EMBL-EBI "Data resources" list</a>.
+      </p>
+    </header>
+
+    <section class="controls" aria-label="Bingo card options">
+      <label for="centerMode">Center square:</label>
+      <select id="centerMode">
+        <option value="free">Free</option>
+        <option value="embl-ebi">EMBL-EBI</option>
+        <option value="random">Random EMBL-EBI resource</option>
+      </select>
+
+      <button id="generateBtn" type="button">🎲 Generate a new bingo card</button>
+    </section>
+
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <section class="preview-wrap">
+      <div id="card" class="card" aria-label="Bingo card preview"></div>
+    </section>
+
+    <footer>
+      <p>
+        Resource list sourced from
+        <a href="https://www.ebi.ac.uk/services/data-resources-and-tools/" target="_blank" rel="noopener">EMBL-EBI</a>.
+        Code licensed under the
+        <a href="LICENSE">Apache License 2.0</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="resources.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
